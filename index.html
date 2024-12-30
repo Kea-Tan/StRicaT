@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faith and Friendship Invitation</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://raw.githubusercontent.com/Kea-Tan/StRicaT/refs/heads/main/background.jpg') no-repeat center center fixed; /* Fixed URL */
+      background-size: cover; /* Ensures the background covers the entire screen */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .envelope-container {
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      text-align: center;
+    }
+
+    .envelope {
+      background: #ffe4e1;
+      border-radius: 10px;
+      height: 200px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .open-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .open-btn:hover {
+      background-color: #ff3e1d;
+    }
+
+    .invitation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .invitation img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .btn-group {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #ff3e1d;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 300px;
+      background: white;
+      border: 2px solid #ffe4e1;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .popup p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .popup a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .popup a:hover {
+      background-color: #ff3e1d;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope-container">
+    <div class="envelope"></div>
+    <button class="open-btn" onclick="openInvitation()">Open Invitation</button>
+  </div>
+
+  <div class="invitation" id="invitation">
+    <img src="https://raw.githubusercontent.com/Kea-Tan/StRicaT/refs/heads/main/RicaT..jpg" alt="Invitation"> <!-- Fixed URL -->
+    <div class="btn-group">
+      <button class="btn" onclick="showPopup('yes')">Yes</button>
+      <button class="btn" onclick="showPopup('next-time')">Let’s Set Next Time</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <p id="popup-message"></p>
+    <a href="https://www.facebook.com/kea.tan.740851" target="_blank">Send Me a Message</a>
+  </div>
+
+  <script>
+    function openInvitation() {
+      document.querySelector(".invitation").style.display = "flex";
+    }
+
+    function showPopup(type) {
+      const popup = document.getElementById("popup");
+      const message = document.getElementById("popup-message");
+      popup.style.display = "block";
+
+      if (type === "yes") {
+        message.textContent =
+          "Thank you for saying yes! I'm excited to build a Christ-like friendship with you! Send me a message to confirm.";
+      } else if (type === "next-time") {
+        message.textContent =
+          "Let’s set another time! I'm excited to build a Christ-like friendship with you! Send me a message.";
+      }
+    }
+  </script>
+</body>
+</html>
